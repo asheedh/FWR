@@ -4,12 +4,23 @@ from smail import sendmail,recievemail
 from keys import secret_key,salt,salt2,salt3
 from itsdangerous import URLSafeTimedSerializer
 from tokens import token
+import os
 import mysql.connector
 app=Flask(__name__)
 app.secret_key=secret_key
-mydb=mysql.connector.connect(host='localhost',user='root',password='heez@1183',db='fwr')
+#mydb=mysql.connector.connect(host='localhost',user='root',password='heez@1183',db='fwr')
+db= os.environ['RDS_DB_NAME']
+user=os.environ['RDS_USERNAME']
+password=os.environ['RDS_PASSWORD']
+host=os.environ['RDS_HOSTNAME']
+port=os.environ['RDS_PORT']
+with mysql.connector.connect(host=host,user=user,password=password,db=db) as conn:
+    cursor=conn.cursor(buffered=True)
+    cursor.execute('create table if not exists donors(username varchar(15) primary key,password varchar(15),email varchar(50),email_status enum("confirmed","not confirmed"),mblnum bigint(20))')
+    cursor.execute('create table if not exists food(fid BINARY(16) primary key,quantity varchar(50),E_date date,items varchar(100),given_by VARCHAR(20),datedate TIMESTAMP DEFAULT CURRENT_TIMESTAMP on update current_timestamp,FOREIGN KEY (given_by) REFERENCES users(username))')
+    cursor.execute('create table if not exists benf(username varchar(20) primary key,password varchar(20),Benf_name varchar(20),SWname vachar(20),email varchar(100),email_status enum("confirmed","not confirmed"),mblnum bigint(20))')
+mydb=mysql.connector.connect(host=host,user=user,password=password,db=db)
 @app.route('/')
- 
 def index():
     return render_template('index.html')
 @app.route('/registration',methods=['GET','POST'])
@@ -443,5 +454,5 @@ def rlogout():
         return redirect(url_for('rlogin'))
     else:
         return redirect(url_for('rlogin'))
-
-app.run(use_reloader=True,debug=True)
+if __name__ =="__main__":
+    app.run()
