@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='index.css')}}"/>
+    <title>Document</title>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <center><b>{{ message }}</b></center>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+    <div class="container">
+    <h1> Food Wastage Reduction </h1>
+    <p> SAVE FOOD,SHARE FOOD</p>
+    <a href="{{url_for('login')}}"><button>Login as Donor</button></a>
+    <a href="{{url_for('registration')}}"><button>Register as Donor</button></a><br>
+    
+    <a href="{{url_for('rlogin')}}"><button>Login as Benefeciary</button></a>
+    <a href="{{url_for('rregistration')}}"><button>Register as Benefeciary</button></a>
+    </div>
+</body>
+</html>

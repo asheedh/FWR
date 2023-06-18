@@ -1,0 +1,32 @@
+{% extends 'homepage.html' %}
+{% block addcss %}
+    <link rel="stylesheet" href="{{url_for('static',filename='donationdata.css')}}">
+{%endblock addcss %}
+{% block content %}
+{% if data=='empty' %}
+<b>No Results Found</b>
+{% else %}
+    <table>
+        <thead>
+            <tr>
+                <th>quantity</th>
+                <th>view</th>
+                <th>Expiry Date</th>
+                <th>Date</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in data %}
+            <tr>
+                <td>{{i[1]}}</td>
+                <td><a href="{{url_for('fidv',uid=i[0])}}">view</a></td>
+                <td>{{i[2]}}</td>
+                <td>{{i[4]}}</td>
+                <td>{{i[5]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+    {% endblock content %}

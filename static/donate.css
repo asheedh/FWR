@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image:url('https://nuffoodsspectrum.in/wp-content/uploads/articles/1-6056.jpg');
+    background-size:cover;
+    margin: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #9f7e7e;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.container input[type="text"],
+.container input[type="date"],
+.container textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d5cff8;
+    border-radius: 4px;
+    resize: none;
+    font-size: 16px;
+    color: #333;
+}
+
+.content-field {
+    height: 200px;
+}
+
+button {
+    background-color: #3729b9;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #1e6fa8;
+}

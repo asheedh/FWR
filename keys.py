@@ -1,0 +1,4 @@
+secret_key=b'\xc9l\xbb0\x1e\x0f\t\xbc\xb7\r\xe9Yv+(\x0b\xf8\xde\xdd>t\x0b\x8e\xaeL'
+salt='food'
+salt2='password'
+salt3='reciever'

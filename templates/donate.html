@@ -1,0 +1,22 @@
+{% extends 'homepage.html' %}
+{% block addcss %}
+    <link rel="stylesheet" href="{{url_for('static',filename='donate.css')}}">
+{% endblock addcss %}
+{% block content %}
+<br>
+    <div class="container">
+        <h1>Food Description</h1>
+        <form method="post">
+            <label>Food Quanity:</label>
+            <input type="text" placeholder="Quantity of food" name="quantity" required>
+        
+            <label>Expiry Date</label>
+            <input type="date" required name="date" required>
+
+            <label for="contentField">Food Items</label>
+            <textarea id="contentField" class="content-field" placeholder="Food items" name="items" required>{{items}}</textarea>
+
+            <button type="submit">Donate</button>
+        </form>
+    </div>
+{% endblock content %}

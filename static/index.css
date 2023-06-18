@@ -1,0 +1,24 @@
+body{
+    background-image:url('https://www.shethepeople.tv/wp-content/uploads/2021/09/Food-wastage.jpg');
+    background-size:cover;
+    height:97vh;
+}
+.container{
+    display:block;
+    box-align:center;
+    text-align: center;
+    padding:5px;
+    padding-bottom: 40px;
+}
+button{
+    padding:5px;
+    border-radius:5px;
+    color:black;
+    border:none;
+    font-size: 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+h1{
+    font-size:60px;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static',filename='registration.css')}}"/>
+  <title>Document</title>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <center><b>{{ message }}</b></center>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+  <div class="container">
+    <form method="post">
+      <h2>Register Now to Donate Food </h2>  
+      <label>Username</label>
+      <input type="text" name="username" required><br>
+
+      <label>Password</label>
+      <input type="password" name="password" required><br>
+
+      <label>Email</label>
+      <input type="email" name="email" required><br>
+
+      <labesl>Mobile Number</labesl>
+      <input type="number" name="mblnum" required><br>
+
+      <button type="submit">Register</button>
+    </form>
+    <div class="urls">
+      Already have account?<a href="{{url_for('login')}}"> Login </a>
+    </div>
+  </div>
+</body>
+</html>

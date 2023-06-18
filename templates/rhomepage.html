@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% block addcss %}{% endblock %}
+    <style>
+        .navbar .form-inline {
+            display: flex;
+            justify-content: flex-end;
+        }
+    </style>
+</head>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <center><b>{{ message }}</b></center>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body style="background: rgb(177, 248, 248);">
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand">Benefeciary portal</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <h1 style="text-align:justify">*** Eat Well, Sleep Well ***</h1>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+            
+            
+        </div>
+        <a class="nav-link">Hello,{{session.get('user')}}</a>
+        <a class="nav-link" href="{{url_for('rlogout')}}"><b>logout</b></a>
+    </nav>
+    <h2><b>Importance of Food</b></h2>
+            <p> Food is one of the basic necessities of life. Food contains nutrients—substances essential for the growth, repair, and maintenance of body tissues and for the regulation of vital processes. Nutrients provide the energy our bodies need to function.</p>
+
+    <p>The energy in food is measured in units called calories. Age, sex, weight, height, and level of activity determine the number of calories a person needs each day. Depending on age, sex, and activity level, the recommended daily caloric intake for a child aged 11 to 14 can range anywhere from 1,600 to 2,600 calories per day, with sedentary girls needing the fewest calories and active boys needing the most. For adults, this can range from 1,800 to about 3,000.</p>
+
+    <p>Kinds of Nutrients</p>
+
+    <p>Scientists divide nutrients into six major groups: carbohydrates, fats, proteins, minerals, vitamins, and water. Most foods contain all or most nutrient groups, in different amounts.</p>
+
+    <p>Carbohydrates provide energy for the body. Nearly all the carbohydrates we eat come from plants. They include starches found in cereal grains and plants like potatoes and yams. Sugars, found in fruits, vegetables, and milk, are also carbohydrates. Sugarcane and sugar beets are grown specifically for their high sugar content.</p>
+
+    <p>Many of the starches and sugars we eat have been processed into products, such as flour and corn syrup. These processed carbohydrates are used in cookies, cakes, breads, pastas, and pies.</p>
+
+    <p>Fats provide more than twice as much energy as carbohydrates. They also help protect and insulate the body and its internal organs. Common fats include vegetable oils, such as soybean, cottonseed, and corn oil. They are used in cooking and in the processing of many foods. Fats that come from animal products include butter and lard. Eggs, milk, cheese, meats, poultry, and fish also contain high levels of fats.</p>
+
+    <p>Proteins are the body’s chief tissue-builders. They help keep skin, bones, muscles, and blood healthy. Proteins also help regulate bodily processes, including transporting oxygen and nutrients into and out of cells; the clotting of blood; and the formation of antibodies, which help fight disease. Animal products, such as beef, fish, poultry, eggs, and dairy products, are high in protein. Grains, nuts, and some beans are also protein-rich foods.</p>
+
+    <p>Minerals and vitamins are called micronutrients because they are needed in very small quantities compared with carbohydrates, fats, and proteins (known as macronutrients). Minerals provide building materials for the body and help regulate its activities, much as proteins do. Calcium and phosphorus build strong bones and teeth, iron contributes to healthy blood, and iodine helps keep the thyroid gland working.</p>
+
+    <p>Vitamins help the body make full use of other nutrients by assisting the chemical reactions that make those nutrients work. For example, vitamin B1, or thiamine, helps regulate the release of energy from carbohydrates, promotes a healthy appetite, and aids the functioning of the nervous system. Vitamin D helps in the growth and maintenance of healthy bones.</p>
+
+    <p>Other essentials for the body’s health include water, oxygen, and fiber. Some scientists include water in the list of basic nutrients. Water makes up more than half of a human body’s weight. It is involved in most body processes, such as the regulation of temperature, the transporting of nutrients into cells, and the elimination of waste products from cells.</p>
+
+    <p>Oxygen is not a nutrient, since it is breathed in and not eaten, but it is essential to life. It permits the release of energy from food inside the body.</p>
+
+    <p>Fiber is indigestible material found in most plant foods. It adds bulk to the diet, helping to keep the intestines healthy. Fiber-rich foods include whole grains, dried beans, and fresh fruits and vegetables.</p>
+
+    <p>A healthy diet contains a balanced mix of different foods that together provide all essential nutrients. Malnutrition is the lack of a balanced diet. Too few nutrients, too many nutrients, or an imbalance of nutrients (too many carbohydrates, for instance, and not enough fruits and vegetables) can lead to malnutrition.</p>
+
+    <p>Undernutrition is a form of malnutrition. It is usually linked to hunger. Undernutrition happens when the body does not get enough food to meet its needs. Many diseases and even death are caused by lack of food. Death due to lack of food is called starvation.</p>
+
+    <p>To get the right amounts of nutrients, people need to select from a range of food types: cereal grains; fruits and vegetables; legumes, meat, poultry, fish, and eggs; and milk and dairy products. A food pyramid outlines the suggested amount of these different types of foods people should eat each day.</p>
+
+    <p>Cereal Grains</p>
+
+    <p>Cereal grains are the edible seeds of certain grasses. People have grown them since the beginning of agriculture. Today, the most commonly grown grains are wheat, rice, and corn (maize). Other important grains are sorghum, millet, barley, oats, and rye.</p>
+
+    <p>Worldwide, cereal grains are the most important food staples. They are eaten almost daily by large populations. They supply a significant percentage of the calories consumed by the world’s population. Cereal grains and the products made from them provide food not only for people, but also for livestock, such as cattle, chickens, and hogs.</p>
+
+    <p>Throughout the world, more wheat is planted than any other grain. Wheat is the chief ingredient in most breads, cookies, cakes, crackers, pastas, and some breakfast cereals. China, the United States, Russia, Ukraine, India, France, and Canada are major wheat-producing countries. Wheat, often eaten as bread, serves as the principal food grain for people living in regions with temperate climates.</p>
+
+    <p>Rice, an Asian tropical grass, is a food staple for more than half the world’s population. More than 90 percent of the world’s total rice crop is produced and eaten in South and East Asia. Rice is also a food staple for people in parts of Africa and Latin America. This cereal grain thrives in a warm, humid climate with heavy rainfall or wet ground. It is often grown in flooded fields called rice paddies.</p>
+
+    <p>Hominy grits, corn bread, popcorn, and tortillas are all made with corn. Outside the United States, this grain is called maize. Although native to the Americas, maize is now cultivated throughout most of the world and is a staple food in many areas. It grows in various soils and climates and at different elevations. American farmers produce over 30 percent of the world’s corn; of that 40 percent, most of it is used to feed livestock. Corn is also used to produce sweeteners, such as corn syrup and cornstarch.</p>
+
+    <p>Sorghum and millet are other grains commonly used as livestock feeds. These grains are also staple foods for people in parts of Africa and Asia, where they are used in breads, porridges, and cakes.</p>
+
+    <p>Three other grains—barley, oats, and rye—are important in many regions. Barley thrives in a wide range of climates. One type of barley is the source of malt for making beer. Barley is also used in making vinegar, malt extract, and beverages similar to milk. Pearl barley, the most popular form of this grain, is often used in soups and other foods.</p>
+
+    <p>Oats and rye were domesticated much later than other grains. Oats are used mainly as livestock feed, but also go into oatmeal and other breakfast cereals. After wheat, rye is the second most common grain used as a bread flour; the two are often mixed together in breads. Bread made with rye alone, called black bread, is popular in many European countries.</p>
+    
+    {% block content %}{% endblock %}
+    
+    <!-- Add Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

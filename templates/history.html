@@ -1,0 +1,18 @@
+{% extends 'homepage.html' %}
+{% block addcss %}
+    <link rel="stylesheet" href="{{url_for('static',filename='history.css')}}">
+{% endblock addcss %}
+{% block content %}
+<br>
+    <div class="container">
+        <h1>History</h1>
+        <label>Food Quanity:{{quantity}}</label>
+        
+        <label>Expiry Date : {{E_date}}</label>
+
+        <label for="contentField">Food Items</label>
+        <textarea id="contentField" class="content-field" placeholder="Food items" name="items" readonly>{{items}}</textarea>
+
+            <a href="{{url_for('homepage')}}"><button>back</button></a>
+    </div>
+{% endblock content %}
