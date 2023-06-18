@@ -4,10 +4,13 @@ from smail import sendmail,recievemail
 from keys import secret_key,salt,salt2,salt3
 from itsdangerous import URLSafeTimedSerializer
 from tokens import token
+import
 import os
 import mysql.connector
 app=Flask(__name__)
 app.secret_key=secret_key
+app.config['SESSION_TYPE']='filesystem'
+Session(app)
 #mydb=mysql.connector.connect(host='localhost',user='root',password='heez@1183',db='fwr')
 db= os.environ['RDS_DB_NAME']
 user=os.environ['RDS_USERNAME']
